@@ -15,17 +15,23 @@ This is an upgraded and modified version of [m2sd/nuxt-laravel-starter](https://
 
 ## Installation
 
-- Clone and setup: 
-
+- Clone repository: 
 ```bash
 $ git clone https://github.com/ordigital/laravel-nuxt-bs.git your-project
 $ cd your-project
-$ npm install
-$ npm audit fix
-$ composer install
-$ php artisan key:generate
-$ touch database/database.sqlite
-$ php artisan migrate:fresh --seed
+```
+- Run auto-setup:
+```bash
+$ ./setup.sh
+```
+…which just executes commands below:
+```bash
+$ npm install # installs npm modules
+$ npm audit fix # fixes to npm
+$ composer install # installs composer modules
+$ php artisan key:generate # generates app key in .env
+$ touch database/database.sqlite # creates sqlite database
+$ php artisan migrate:fresh --seed # migrates and seeds database with example user
 ```
 - Edit `.env` and change:
 ```bash
