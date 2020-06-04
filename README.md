@@ -23,9 +23,8 @@ $ npm install
 $ npm audit fix
 $ php artisan key:generate
 ```
-
-- Edit `.env` to change APP_NAME and APP_DESC.
-
+- Edit `.env` to change `APP_NAME` and `APP_DESC`.
+- Edit NuxtJS config in `nuxt.config.js` and NuxtJS project in `resources/nuxt`
 - Run developement server:
 ```bash
 $ npm run dev
