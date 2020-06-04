@@ -1,21 +1,23 @@
-# Nuxt Laravel Starter
+# laravel-nuxt-bs
 
-Laravel 7 + NuxtJS + BootstrapVue
+Laravel 7 + NuxtJS + BootstrapVue with ESLint with VSCode support.
 
-## Scripts
+## Installation
+
+Clone and setup: 
 
 ```bash
-# *** Global ***
-# development build with nuxt dev server with hot reloading
-npm run dev
-# production build
-npm run build
-# perform tests
-npm run test
-# find linting errors
-npm run lint
-# autofix linting errors
-npm run lint:fix
-# check for conflicting lint rules
-npm run lint:check
+$ git clone https://github.com/ordigital/laravel-nuxt-bs.git your-project
+$ cd your-project
+$ npm install
+$ npm audit fix
+$ php artisan key:generate
+```
+Run developement server:
+```bash
+$ npm run dev
+```
+Build for production:
+```bash
+$ npm run build
 ```
