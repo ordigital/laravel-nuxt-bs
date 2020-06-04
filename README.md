@@ -1,11 +1,11 @@
 # Laravel 7 + NuxtJS + BootstrapVue Starter pack
 
-This is an upgraded and modified version of [m2sd/nuxt-laravel-starter](https://github.com/m2sd/nuxt-laravel-starter) with BootstrapVue instead of Vuetify and Laravel 7.
+This is an upgraded and modified version of [m2sd/nuxt-laravel-starter](https://github.com/m2sd/nuxt-laravel-starter) with BootstrapVue instead of Vuetify and Laravel 7 with Sanctum SPA Auth.
 
 **Features:**
 
 - Laravel 7
-- Sanctum SPA
+- Sanctum SPA Auth
 - public_html as public dir
 - NuxtJS (pallares/laravel-nuxt)
 - BootstrapVue
@@ -24,7 +24,8 @@ $ npm install
 $ npm audit fix
 $ composer install
 $ php artisan key:generate
-$ php artisan db:seed
+$ touch database/database.sqlite
+$ php artisan migrate:fresh --seed
 ```
 - Edit `.env` and change:
 ```bash
@@ -34,11 +35,6 @@ APP_URL=http://localhost:8000 # axios baseURL for production
 DEV_URL=http://localhost:3000 # axios baseURL for development
 ```
 - You can edit NuxtJS config in `nuxt.config.js` and NuxtJS project in `resources/nuxt`
-- To test Sanctum auth:
-```bash
-$ touch database/database.sqlite
-$ php artisan migrate:fresh --seed
-```
 - Run developement server:
 ```bash
 $ npm run dev
