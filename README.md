@@ -1,4 +1,4 @@
-# laravel-nuxt-bs
+# Laravel 7 + NuxtJS + BootstrapVue Starter pack
 
 This is an upgraded and modified version of [m2sd/nuxt-laravel-starter](https://github.com/m2sd/nuxt-laravel-starter) with BootstrapVue instead of Vuetify and Laravel 7.
 
