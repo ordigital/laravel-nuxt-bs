@@ -7,5 +7,5 @@ return [
      * In development, the SPA page will be on an external server. This
      * page will be passed as an environment variable (NUXT_URL).
      */
-    'page' => getenv('NUXT_OUTPUT_PATH') ?: public_path('app/index.html'),
+    'page' => getenv('NUXT_OUTPUT_PATH') ?: base_path().DIRECTORY_SEPARATOR.'public_html/spa.html',
 ];

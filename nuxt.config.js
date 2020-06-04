@@ -55,15 +55,20 @@ export default {
    */
   axios: {},
 
- /*
-  ** BootstrapVue
-  */
+  /**
+   * Nuxt-Laravel
+   */
+  laravel: { publicDir: 'public_html' },
+
+  /*
+   ** BootstrapVue
+   */
   bootstrapVue: {
     icons: true // Install the IconsPlugin (in addition to BootStrapVue plugin
   },
 
   router: {
-    base: '/app/'
+    base: '/'
   },
 
   /*

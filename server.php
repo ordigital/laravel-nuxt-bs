@@ -17,8 +17,8 @@ if ('/app' === $uri) {
     header('Location: '.$uri.'/');
 
     return true;
-} elseif ('/' !== $uri && file_exists(__DIR__.'/public'.$uri)) {
+} elseif ('/' !== $uri && file_exists(__DIR__.'/public_html'.$uri)) {
     return false;
 }
 
-require_once __DIR__.'/public/index.php';
+require_once __DIR__.'/public_html/index.php';

@@ -10,9 +10,4 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/app{path}', '\\'.Pallares\LaravelNuxt\Controllers\NuxtController::class)->name('nuxt')->where('path', '.*');
+Route::get('/{path}', '\\'.Pallares\LaravelNuxt\Controllers\NuxtController::class)->name('nuxt')->where('path', '.*');
