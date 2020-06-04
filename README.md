@@ -5,6 +5,7 @@ This is an upgraded and modified version of [m2sd/nuxt-laravel-starter](https://
 **Features:**
 
 - Laravel 7
+- Sanctum SPA
 - public_html as public dir
 - NuxtJS (pallares/laravel-nuxt)
 - BootstrapVue
@@ -21,15 +22,29 @@ $ git clone https://github.com/ordigital/laravel-nuxt-bs.git your-project
 $ cd your-project
 $ npm install
 $ npm audit fix
+$ composer install
 $ php artisan key:generate
+$ php artisan db:seed
 ```
-- Edit `.env` to change `APP_NAME` and `APP_DESC`.
-- Edit NuxtJS config in `nuxt.config.js` and NuxtJS project in `resources/nuxt`
+- Edit `.env` and change:
+```bash
+APP_NAME="Name of your app"
+APP_DESC="Description of your app"
+APP_URL=http://localhost:8000 # axios baseURL for production
+DEV_URL=http://localhost:3000 # axios baseURL for development
+```
+- You can edit NuxtJS config in `nuxt.config.js` and NuxtJS project in `resources/nuxt`
+- To test Sanctum auth:
+```bash
+$ touch database/database.sqlite
+$ php artisan migrate:fresh --seed
+```
 - Run developement server:
 ```bash
 $ npm run dev
 ```
-- Build for production:
+- Open website and try to sign in as `alf@melmack.mm` using password `lucky`
+- To build for production:
 ```bash
 $ npm run build
 $ php artisan serve

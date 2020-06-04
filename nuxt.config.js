@@ -1,11 +1,10 @@
 require('dotenv').config()
+const development = process.env.NODE_ENV !== 'production'
 
 export default {
   srcDir: 'resources/nuxt',
   mode: 'spa',
-  /*
-   ** Headers of the page
-   */
+
   head: {
     titleTemplate: '%s - ' + process.env.APP_NAME,
     title: process.env.APP_NAME || '',
@@ -20,64 +19,59 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
-  /*
-   ** Customize the progress-bar color
-   */
+
   loading: { color: '#fff' },
-  /*
-   ** Global CSS
-   */
   css: [],
-  /*
-   ** Plugins to load before mounting the App
-   */
   plugins: [],
-  /*
-   ** Nuxt.js dev-modules
-   */
+  modules: ['nuxt-laravel', '@nuxtjs/axios', '@nuxtjs/auth'],
   buildModules: [
     '@nuxtjs/dotenv',
-    // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     'bootstrap-vue/nuxt'
   ],
-  /*
-   ** Nuxt.js modules
-   */
-  modules: [
-    'nuxt-laravel',
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
-  ],
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
-  axios: {},
 
-  /**
-   * Nuxt-Laravel
-   */
   laravel: { publicDir: 'public_html' },
+  bootstrapVue: { icons: true },
+  router: { base: '/' },
+  axios: { baseURL: development ? process.env.DEV_URL : process.env.APP_URL },
+  build: { extend(config, ctx) {} },
 
-  /*
-   ** BootstrapVue
-   */
-  bootstrapVue: {
-    icons: true // Install the IconsPlugin (in addition to BootStrapVue plugin
-  },
-
-  router: {
-    base: '/'
-  },
-
-  /*
-   ** Build configuration
-   */
-  build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {}
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: '/api/login',
+            method: 'post',
+            withCredentials: true,
+            headers: {
+              'X-Requested-With': 'XMLHttpRequest',
+              'Content-Type': 'application/json'
+            }
+          },
+          logout: {
+            url: '/api/logout',
+            method: 'get',
+            withCredentials: true,
+            headers: {
+              'X-Requested-With': 'XMLHttpRequest',
+              'Content-Type': 'application/json'
+            }
+          },
+          user: {
+            url: '/api/user',
+            method: 'get',
+            propertyName: false,
+            withCredentials: true,
+            headers: {
+              'X-Requested-With': 'XMLHttpRequest',
+              'Content-Type': 'application/json'
+            }
+          }
+        },
+        tokenRequired: false,
+        tokenType: false
+      }
+    }
   }
 }

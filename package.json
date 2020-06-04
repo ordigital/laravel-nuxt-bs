@@ -1,8 +1,8 @@
 {
     "private": true,
     "scripts": {
-        "dev": "npm run mix:dev && npm run nuxt:dev",
-        "build": "npm run mix:build && npm run nuxt:build",
+        "dev": "nuxt",
+        "build": "nuxt build",
         "lint": "eslint --ext .js,.vue .",
         "lint:fix": "npm run lint -- --fix",
         "lint:check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
@@ -18,6 +18,7 @@
         "nuxt:test": "jest"
     },
     "devDependencies": {
+        "@nuxtjs/auth": "^4.9.1",
         "@nuxtjs/axios": "^5.10.3",
         "@nuxtjs/dotenv": "^1.4.1",
         "@nuxtjs/eslint-config": "^2.0.2",
@@ -59,5 +60,8 @@
         "hooks": {
             "pre-commit": "lint-staged"
         }
+    },
+    "dependencies": {
+        "@nuxtjs/proxy": "^2.0.0"
     }
 }

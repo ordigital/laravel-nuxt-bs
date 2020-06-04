@@ -4,8 +4,12 @@
       <Logo />
       <h1 class="title">Laravel-nuxt-bs</h1>
       <h2 class="subtitle">
-        This is Laravel 7 + Nuxt + Bootstrap-vue
+        Laravel 7 + Nuxt + Bootstrap-vue
       </h2>
+      <b-button variant="primary" class="text-white" to="/login" nuxt>
+        <span v-if="$auth.user">Welcome {{ $auth.user.name }}!</span>
+        <span v-else>Click to sign in!</span>
+      </b-button>
     </div>
   </div>
 </template>
