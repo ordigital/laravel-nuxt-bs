@@ -33,7 +33,7 @@ export default {
   laravel: { publicDir: 'public_html' },
   bootstrapVue: { icons: true },
   router: { base: '/' },
-  axios: { baseURL: development ? process.env.DEV_URL : process.env.APP_URL },
+  axios: { baseURL: development ? process.env.DEV_URL : undefined },
   build: { extend(config, ctx) {} },
 
   auth: {

@@ -37,7 +37,7 @@ $ php artisan migrate:fresh --seed # migrates and seeds database with example us
 ```bash
 APP_NAME="Name of your app"
 APP_DESC="Description of your app"
-APP_URL=http://localhost:8000 # axios baseURL for production
+APP_URL=http://localhost:8000
 DEV_URL=http://localhost:3000 # axios baseURL for development
 ```
 - You can edit NuxtJS config in `nuxt.config.js` and NuxtJS project in `resources/nuxt`
