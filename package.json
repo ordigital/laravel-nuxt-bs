@@ -24,7 +24,7 @@
         "@nuxtjs/eslint-config": "^2.0.2",
         "@nuxtjs/eslint-module": "^1.2.0",
         "@vue/test-utils": "^1.0.3",
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "babel-core": "^7.0.0-bridge.0",
         "babel-eslint": "^10.1.0",
         "babel-jest": "^25.5.1",
